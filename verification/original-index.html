@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Library Cafe | Cafe, Levin</title>
+<meta content="The Library Cafe inside Te Takere, 10 Bath Street, Levin. Espresso coffee, cabinet food, roast meals and a good place to catch up, Monday to Friday." name="description"/>
+<meta content="The Library Cafe | Cafe, Levin" property="og:title"/>
+<meta content="Espresso coffee, cabinet food and hot lunches inside Te Takere, in the heart of Levin's town centre." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="img/hero-coffee.jpg" property="og:image"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d3b30'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23c98f2d' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&amp;family=Onest:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#14261f;
+  --pine:#1d3b30;
+  --pine-2:#24493c;
+  --bone:#f4f1e7;
+  --card:#fbf9f2;
+  --amber:#c98f2d;
+  --amber-bright:#e8b658;
+  --amber-deep:#8a5f16;
+  --text:#2b3a33;
+  --text-soft:#5c6b63;
+  --on-dark:#ece9dc;
+  --on-dark-soft:#b9c2b9;
+  --line:rgba(29,59,48,.14);
+  --line-dark:rgba(236,233,220,.16);
+  --radius:14px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Onest',sans-serif;color:var(--text);background:var(--bone);line-height:1.7;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block;image-orientation:from-image}
+h1,h2,h3{font-family:'Literata',serif;color:var(--ink);line-height:1.15}
+a{color:inherit}
+::selection{background:var(--amber);color:var(--ink)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* Intro overlay */
+#intro{position:fixed;inset:0;background:var(--pine);z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .7s var(--ease),visibility .7s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro .mark{font-family:'Literata',serif;color:var(--on-dark);font-size:1.5rem;letter-spacing:.02em;opacity:0;animation:introIn 1s var(--ease) .15s forwards}
+#intro .mark em{font-style:italic;color:var(--amber-bright)}
+@keyframes introIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* Nav */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(20,38,31,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark)}
+.nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Literata',serif;font-weight:600;font-size:1.18rem;color:var(--on-dark);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.logo em{font-style:italic;color:var(--amber-bright)}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{color:var(--on-dark-soft);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .25s}
+.nav-links a:hover{color:#fff}
+.nav-phone{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-dark);text-decoration:none;font-weight:600;font-size:.9rem;line-height:1;transition:background .25s,border-color .25s}
+.nav-phone:hover{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.nav-phone svg{width:15px;height:15px;flex:none}
+#menu-btn{display:none;background:none;border:1px solid var(--line-dark);border-radius:10px;width:44px;height:44px;color:var(--on-dark);cursor:pointer;align-items:center;justify-content:center}
+#menu-btn svg{width:20px;height:20px}
+#mobile-menu{display:none;background:rgba(20,38,31,.97);border-top:1px solid var(--line-dark);padding:10px 20px 22px}
+#mobile-menu.open{display:block}
+#mobile-menu a{display:block;padding:13px 4px;color:var(--on-dark);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line-dark)}
+#mobile-menu .m-call{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--amber);color:var(--ink);border-radius:999px;height:48px;font-weight:700;border-bottom:none}
+#mobile-menu .m-call svg{width:16px;height:16px}
+
+/* Hero */
+.hero{position:relative;min-height:100dvh;background:var(--pine);display:flex;align-items:center;overflow:hidden}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
+.hero-slide.on{opacity:1}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,38,31,.72) 0%,rgba(20,38,31,.5) 45%,rgba(20,38,31,.78) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:120px 20px 70px;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--amber-bright);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.hero-eyebrow svg{width:14px;height:14px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.1rem);color:#fff;font-weight:600;max-width:15ch;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--amber-bright);line-height:1.15;display:inline-block;padding-bottom:.08em}
+.hero p{color:var(--on-dark);max-width:44ch;font-size:1.08rem;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:.98rem;text-decoration:none;line-height:1;transition:transform .25s var(--ease),background .25s,color .25s;cursor:pointer;border:none;font-family:inherit}
+.btn svg{width:16px;height:16px;flex:none}
+.btn:active{transform:scale(.98)}
+.btn-amber{background:var(--amber);color:var(--ink)}
+.btn-amber:hover{background:#d89c38}
+.btn-ghost{background:rgba(236,233,220,.1);color:#fff;border:1px solid rgba(236,233,220,.4);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(236,233,220,.2)}
+.hero-review{max-width:430px;background:rgba(20,38,31,.6);border:1px solid rgba(236,233,220,.22);border-radius:var(--radius);padding:18px 22px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-review .stars{color:var(--amber);display:flex;gap:3px;margin-bottom:8px}
+.hero-review .stars svg{width:15px;height:15px}
+.hq{min-height:76px}
+.hq blockquote{color:var(--on-dark);font-size:.95rem;line-height:1.55;font-style:italic;transition:opacity .5s ease}
+.hq cite{display:block;margin-top:7px;color:#cfd6cc;font-size:.82rem;font-style:normal;font-weight:600}
+.hq .tag{display:inline-block;margin-left:8px;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-bright);border:1px solid rgba(226,172,69,.55);border-radius:999px;padding:1px 8px;vertical-align:1px}
+
+/* Sections */
+section{padding:96px 0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:600;margin-bottom:14px}
+.sec-head p{color:var(--text-soft);font-size:1.04rem}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(29,59,48,.35)}
+.svc-img{aspect-ratio:4/3;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05);transition:transform .6s var(--ease)}
+.svc:hover .svc-img img{transform:scale(1.05)}
+.svc-body{padding:22px 24px 26px}
+.svc-label{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:9px}
+.svc-label svg{width:14px;height:14px}
+.svc h3{font-size:1.22rem;font-weight:600;margin-bottom:8px}
+.svc p{color:var(--text-soft);font-size:.94rem;line-height:1.65}
+
+/* About */
+.about{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:var(--radius);filter:saturate(.85) contrast(1.05)}
+.about-tag{position:absolute;left:18px;bottom:18px;background:var(--pine);color:var(--on-dark);font-size:.8rem;font-weight:600;padding:9px 16px;border-radius:10px;letter-spacing:.03em}
+.about-copy h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:600;margin-bottom:18px}
+.about-copy p{color:var(--text-soft);margin-bottom:16px}
+.about-list{list-style:none;margin-top:24px;display:grid;gap:13px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--ink)}
+.about-list svg{width:20px;height:20px;color:var(--amber-deep);flex:none;margin-top:3px}
+
+/* Crew */
+.crew{background:var(--pine)}
+.crew .sec-head h2{color:#fff}
+.crew .sec-head p{color:var(--on-dark-soft)}
+.crew-badge{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-bright);border:1px solid rgba(226,172,69,.5);border-radius:999px;padding:4px 13px;margin-bottom:16px}
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.crew-card{background:var(--pine-2);border:1px solid var(--line-dark);border-radius:var(--radius);padding:34px 26px;text-align:center;transition:transform .35s var(--ease)}
+.crew-card:hover{transform:translateY(-5px)}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--ink);border:2px solid var(--amber);color:var(--amber-bright);font-family:'Literata',serif;font-size:1.5rem;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.crew-card h3{color:#fff;font-size:1.12rem;font-weight:600;margin-bottom:8px}
+.crew-card p{color:var(--on-dark-soft);font-size:.92rem;line-height:1.6}
+
+/* Reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:40px}
+.rev-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px}
+.rev-card .stars{color:var(--amber-deep);display:flex;gap:3px}
+.rev-card .stars svg{width:16px;height:16px}
+.rev-card blockquote{font-size:.97rem;line-height:1.65;color:var(--text);flex:1}
+.rev-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rev-meta strong{color:var(--ink);font-size:.92rem}
+.rev-meta span{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-deep);border:1px solid rgba(138,95,22,.4);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.rev-cta{text-align:center}
+.btn-pine{background:var(--pine);color:var(--on-dark)}
+.btn-pine:hover{background:var(--pine-2)}
+
+/* Review banner */
+.banner{background:var(--ink);padding:70px 0}
+.banner-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.banner h2{color:#fff;font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:600;max-width:24ch}
+.banner h2 em{font-style:italic;color:var(--amber)}
+
+/* Contact */
+.contact-card{background:var(--card);border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 24px 60px -30px rgba(29,59,48,.3)}
+.contact-map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+.contact-info{padding:40px 40px 44px;display:flex;flex-direction:column;gap:14px}
+.contact-info h2{font-size:1.8rem;font-weight:600;margin-bottom:4px}
+.contact-info>p{color:var(--text-soft);margin-bottom:8px}
+.contact-btns{display:grid;gap:12px;margin-bottom:12px}
+.contact-btns .btn{width:100%}
+.c-row{display:flex;gap:13px;align-items:flex-start;font-size:.94rem;color:var(--text)}
+.c-row svg{width:18px;height:18px;color:var(--amber-deep);flex:none;margin-top:4px}
+.c-row strong{display:block;color:var(--ink);font-size:.86rem}
+.c-row a{text-decoration:none;color:var(--text)}
+.c-row a:hover{color:var(--amber-deep)}
+.socials{display:flex;gap:12px;margin-top:10px}
+.socials a{width:44px;height:44px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--pine);transition:background .25s,color .25s,border-color .25s}
+.socials a:hover{background:var(--pine);color:var(--on-dark);border-color:var(--pine)}
+.socials svg{width:19px;height:19px}
+
+/* Footer */
+footer{background:var(--ink);color:var(--on-dark-soft);padding:56px 0 34px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;margin-bottom:36px}
+.foot-brand .logo{font-size:1.3rem}
+.foot-brand p{max-width:34ch;font-size:.92rem;margin-top:12px}
+.foot-links{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+.foot-links a{color:var(--on-dark-soft);text-decoration:none;font-size:.92rem;transition:color .25s}
+.foot-links a:hover{color:#fff}
+footer .socials a{border-color:var(--line-dark);color:var(--on-dark)}
+footer .socials a:hover{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.foot-base{border-top:1px solid var(--line-dark);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.84rem}
+.foot-base a{color:var(--on-dark-soft)}
+
+/* Responsive */
+@media (max-width:960px){
+  .svc-grid,.crew-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{gap:40px}
+}
+@media (max-width:768px){
+  .nav-links{display:none}
+  #menu-btn{display:flex}
+  .nav-phone{display:none}
+  .about-grid,.contact-card{grid-template-columns:1fr}
+  .contact-map{order:2}
+  .contact-map iframe{min-height:300px}
+  .contact-info{order:1;padding:30px 24px 34px}
+  section{padding:70px 0}
+}
+@media (max-width:600px){
+  .svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr}
+  .hero-inner{padding:110px 20px 60px}
+  .hero-ctas .btn{width:100%}
+  .banner-inner{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div aria-hidden="true" id="intro"><div class="mark">The <em>Library</em> Cafe</div></div>
+<header>
+<nav aria-label="Main" class="nav">
+<a class="logo" href="#top">The <em>Library</em> Cafe</a>
+<ul class="nav-links">
+<li><a href="#services">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Find us</a></li>
+</ul>
+<a class="nav-phone" href="tel:+64223253125">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      022 325 3125
+    </a>
+<button aria-expanded="false" aria-label="Open menu" id="menu-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+</button>
+</nav>
+<div id="mobile-menu">
+<a href="#services">Menu</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Find us</a>
+<a class="m-call" href="tel:+64223253125">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      Call 022 325 3125
+    </a>
+</div>
+</header>
+<main id="top">
+<!-- HERO -->
+<section aria-label="Welcome" class="hero" id="home">
+<div aria-hidden="true" class="hero-slides">
+<div class="hero-slide on" style="background-image:url('img/hero-coffee.jpg')"></div>
+<div class="hero-slide" data-src="img/hero-interior.jpg"></div>
+<div class="hero-slide" data-src="img/hero-food.jpg"></div>
+</div>
+<div aria-hidden="true" class="hero-scrim"></div>
+<div class="hero-inner">
+<span class="hero-eyebrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      Inside Te Takere, Levin
+    </span>
+<h1>Good coffee, in the heart of <em>Levin.</em></h1>
+<p>Espresso, cabinet food and hot lunches inside Te Takere on Bath Street, Monday to Friday.</p>
+<div class="hero-ctas">
+<a class="btn btn-amber" href="#contact">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Find us
+      </a>
+<a class="btn btn-ghost" href="tel:+64223253125">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call 022 325 3125
+      </a>
+</div>
+<div aria-label="Reviews" class="hero-review">
+<div aria-hidden="true" class="stars">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+</div>
+<div class="hq">
+<blockquote id="hq-text">"Consistently the best hot coffee in most of Levin."</blockquote>
+<cite id="hq-cite">Brenda SJ<span class="tag" id="hq-tag">Google review</span></cite>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section id="services">
+<div class="wrap">
+<div class="sec-head reveal">
+<h2>What comes over the counter</h2>
+<p>Order at the counter, grab a table, and we bring it out. Everything made to have alongside a good book or a better yarn.</p>
+</div>
+<div class="svc-grid">
+<article class="svc reveal">
+<div class="svc-img"><img alt="Three cups of espresso coffee held together over a cafe table" height="900" loading="lazy" src="img/card-espresso.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"></path></svg>Coffee</span>
+<h3>Espresso, made properly</h3>
+<p>Flat whites, long blacks and mochas pulled with care. One regular calls it the best hot coffee in most of Levin.</p>
+</div>
+</article>
+<article class="svc reveal">
+<div class="svc-img"><img alt="Fresh croissants dusted with icing sugar" height="900" loading="lazy" src="img/card-cabinet.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9h18a9 9 0 0 0-9-9z"></path><line x1="3" x2="21" y1="16" y2="16"></line><line x1="7" x2="17" y1="20" y2="20"></line></svg>Cabinet</span>
+<h3>Fresh cabinet food</h3>
+<p>Sandwiches, savouries and baking filled each morning. Made for morning tea runs and quick lunches between errands.</p>
+</div>
+</article>
+<article class="svc reveal">
+<div class="svc-img"><img alt="Hearty bowl of hot soup topped with fresh herbs and seeds" height="900" loading="lazy" src="img/card-roast.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-9 9 9 9 0 0 1-9-9z"></path><path d="M8 3v3M12 3v3M16 3v3"></path></svg>Hot lunch</span>
+<h3>Roast meals and hot lunches</h3>
+<p>A proper cooked lunch without cooking it yourself. Regulars rate the roast meals for value on a cold Horowhenua day.</p>
+</div>
+</article>
+<article class="svc reveal">
+<div class="svc-img"><img alt="Chocolate layer cake with dripping ganache on a cake stand" height="900" loading="lazy" src="img/card-cake.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M4 21h16M5 21v-6h14v6M7 15V9h10v6"></path><path d="M12 9V6M12 6a1.5 1.5 0 0 1-1.5-1.5C10.5 3 12 2 12 2s1.5 1 1.5 2.5A1.5 1.5 0 0 1 12 6z"></path></svg>Sweet</span>
+<h3>Cakes and slices</h3>
+<p>Something sweet to go with the coffee. Cakes, slices and biscuits from the cabinet, easy to share and easy to finish.</p>
+</div>
+</article>
+<article class="svc reveal">
+<div class="svc-img"><img alt="Cup of milky tea with chocolate chip biscuits" height="900" loading="lazy" src="img/card-drinks.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M8 2v3M12 2v3M16 2v3"></path><path d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M17 10h2a2 2 0 1 1 0 4h-2"></path></svg>Tea and more</span>
+<h3>Tea, hot chocolate and fluffies</h3>
+<p>Pots of tea, rich hot chocolate and a fluffy for the little ones while you get ten minutes to yourself.</p>
+</div>
+</article>
+<article class="svc reveal">
+<div class="svc-img"><img alt="Four friends laughing over coffee at a cafe table" height="900" loading="lazy" src="img/card-catchup.jpg" width="1200"/></div>
+<div class="svc-body">
+<span class="svc-label"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Space</span>
+<h3>Room for a catch-up</h3>
+<p>Tables with space for prams, study groups and long conversations, right inside Levin's library and community hub.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="wrap">
+<div class="about-grid">
+<div class="about-photo reveal">
+<img alt="Barista pouring hot water over a filter coffee at the counter" height="1050" loading="lazy" src="img/about-cafe.jpg" width="1400"/>
+<span class="about-tag">Bath Street, Levin</span>
+</div>
+<div class="about-copy reveal">
+<h2>The cafe in the middle of everything</h2>
+<p>The Library Cafe sits in the heart of Te Takeretanga o Kura-hau-po, Levin's library and community hub. Call in after story time, between errands, or while the kids pick out their books.</p>
+<p>Order at the counter, find a seat, and your coffee comes to you. Parking is close, the town centre is at the door, and nobody minds if you stay a while.</p>
+<ul class="about-list">
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Inside Te Takere at 10 Bath Street</li>
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Open every weekday until 3pm</li>
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Counter service, no bookings needed</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CREW -->
+<section class="crew" id="crew">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="crew-badge">Example team</span>
+<h2>The people behind the counter</h2>
+<p>A small crew keeping the coffee coming. Real names and faces to be added with the owner.</p>
+</div>
+<div class="crew-grid">
+<div class="crew-card reveal">
+<div aria-hidden="true" class="avatar">LC</div>
+<h3>Owner / Operator</h3>
+<p>Runs the counter, knows the regulars by order, and keeps the cabinet stocked from early each morning.</p>
+</div>
+<div class="crew-card reveal">
+<div aria-hidden="true" class="avatar">LC</div>
+<h3>Barista</h3>
+<p>On the machine through the morning rush, turning out flat whites people cross town for.</p>
+</div>
+<div class="crew-card reveal">
+<div aria-hidden="true" class="avatar">LC</div>
+<h3>Cafe Assistant</h3>
+<p>Plates the hot lunches, clears the tables and makes sure nobody waits long for their order.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- REVIEWS -->
+<section id="reviews">
+<div class="wrap">
+<div class="sec-head reveal">
+<h2>What people say</h2>
+<p>One review below is straight from Google. The others are examples of the reviews we would love you to leave, until the real ones roll in.</p>
+</div>
+<div class="rev-grid">
+<article class="rev-card reveal">
+<div aria-label="5 stars" class="stars">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+</div>
+<blockquote>"Consistently the best hot coffee in most of Levin."</blockquote>
+<div class="rev-meta"><strong>Brenda SJ</strong><span>Google review</span></div>
+</article>
+<article class="rev-card reveal">
+<div aria-label="5 stars" class="stars">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+</div>
+<blockquote>"We call in after story time on Wednesdays. The kids get fluffies and I finally get a decent flat white."</blockquote>
+<div class="rev-meta"><strong>Marie T, Waitarere Beach</strong><span>Example</span></div>
+</article>
+<article class="rev-card reveal">
+<div aria-label="5 stars" class="stars">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+</div>
+<blockquote>"Roast meal on a cold day, you cannot beat it. Parking close by and the library right there for afterwards."</blockquote>
+<div class="rev-meta"><strong>Graham P, Shannon</strong><span>Example</span></div>
+</article>
+</div>
+<div class="rev-cta reveal">
+<a class="btn btn-pine" href="https://www.google.com/maps/search/?api=1&amp;query=The+Library+Cafe+10+Bath+Street+Levin" rel="noopener" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg>
+        See all our Google reviews
+      </a>
+</div>
+</div>
+</section>
+<!-- REVIEW BANNER -->
+<section aria-label="Leave a review" class="banner">
+<div class="wrap banner-inner reveal">
+<h2>Been in for a coffee? <em>Tell Levin about it.</em></h2>
+<a class="btn btn-amber" href="https://www.google.com/maps/search/?api=1&amp;query=The+Library+Cafe+10+Bath+Street+Levin" rel="noopener" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"></path></svg>
+      Leave a Google review
+    </a>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="wrap">
+<div class="sec-head reveal">
+<h2>Find us on Bath Street</h2>
+<p>Walk in through Te Takere. The counter is straight ahead, and the coffee machine is already on.</p>
+</div>
+<div class="contact-card reveal">
+<div class="contact-map">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=The+Library+Cafe,+10+Bath+Street,+Levin+5510,+New+Zealand&amp;output=embed" title="Map showing The Library Cafe at Te Takere, 10 Bath Street, Levin"></iframe>
+</div>
+<div class="contact-info">
+<h2>Say hello</h2>
+<p>Call ahead for a big order, or just turn up.</p>
+<div class="contact-btns">
+<a class="btn btn-pine" href="tel:+64223253125">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Call The Library Cafe
+          </a>
+<a class="btn btn-amber" data-domain="msn.com" data-gmail="" data-su="Enquiry%20from%20the%20website" data-user="nicstar_606" href="#">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-10 6L2 7"></path></svg>
+            Email The Library Cafe
+          </a>
+</div>
+<div class="c-row">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+<div><strong>Phone</strong><a href="tel:+64223253125">022 325 3125</a></div>
+</div>
+<div class="c-row">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-10 6L2 7"></path></svg>
+<div><strong>Email</strong><span data-domain="msn.com" data-user="nicstar_606" id="email-text"></span></div>
+</div>
+<div class="c-row">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<div><strong>Where</strong>Inside Te Takere, 10 Bath Street, Levin 5510</div>
+</div>
+<div class="c-row">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+<div><strong>Hours</strong>Mon, Tue, Thu, Fri: 9am to 3pm<br/>Wed: 10am to 3pm<br/>Weekends: closed</div>
+</div>
+<div class="socials">
+<a aria-label="The Library Cafe on Facebook" href="https://www.facebook.com/thelibrarycafelevin/" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a aria-label="The Library Cafe on Instagram" href="https://www.instagram.com/thelibrarycafelevin/" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="foot-grid">
+<div class="foot-brand">
+<a class="logo" href="#top">The <em>Library</em> Cafe</a>
+<p>Coffee, cabinet food and hot lunches inside Te Takere, in the heart of Levin.</p>
+</div>
+<ul class="foot-links">
+<li><a href="#services">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Find us</a></li>
+</ul>
+<div class="socials">
+<a aria-label="The Library Cafe on Facebook" href="https://www.facebook.com/thelibrarycafelevin/" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a aria-label="The Library Cafe on Instagram" href="https://www.instagram.com/thelibrarycafelevin/" rel="noopener" target="_blank">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
+</a>
+</div>
+</div>
+<div class="foot-base">
+<span>© <span id="year"></span> The Library Cafe, Levin. All rights reserved.</span>
+<span><a href="terms.html">Terms &amp; Conditions</a>  |  <a href="privacy.html">Privacy Policy</a></span>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Intro */
+  var intro=document.getElementById('intro');
+  window.addEventListener('load',function(){
+    setTimeout(function(){intro.classList.add('gone');},reduce?100:900);
+  });
+  setTimeout(function(){intro.classList.add('gone');},2500);
+
+  /* Mobile menu */
+  var btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
+
+  /* Hero slides: lazy-load then rotate */
+  var slides=[].slice.call(document.querySelectorAll('.hero-slide'));
+  slides.forEach(function(s){var src=s.getAttribute('data-src');if(src){s.style.backgroundImage="url('"+src+"')";}});
+  if(!reduce&&slides.length>1){
+    var si=0;
+    setInterval(function(){
+      slides[si].classList.remove('on');
+      si=(si+1)%slides.length;
+      slides[si].classList.add('on');
+    },6000);
+  }
+
+  /* Hero review quotes */
+  var quotes=[
+    {t:'"Consistently the best hot coffee in most of Levin."',c:'Brenda SJ',tag:'Google review'},
+    {t:'"The kids get fluffies and I finally get a decent flat white."',c:'Marie T, Waitarere Beach',tag:'Example'},
+    {t:'"Roast meal on a cold day, you cannot beat it."',c:'Graham P, Shannon',tag:'Example'}
+  ];
+  var hqT=document.getElementById('hq-text'),hqC=document.getElementById('hq-cite'),qi=0;
+  if(!reduce&&hqT){
+    setInterval(function(){
+      hqT.style.opacity=0;
+      setTimeout(function(){
+        qi=(qi+1)%quotes.length;
+        hqT.textContent=quotes[qi].t;
+        hqC.innerHTML='';
+        hqC.appendChild(document.createTextNode(quotes[qi].c));
+        var tag=document.createElement('span');tag.className='tag';tag.textContent=quotes[qi].tag;
+        hqC.appendChild(tag);
+        hqT.style.opacity=1;
+      },500);
+    },6000);
+  }
+
+  /* Scroll reveals */
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* Gmail compose buttons */
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');
+    a.target='_blank';a.rel='noopener';
+  });
+
+  /* Email row text */
+  var et=document.getElementById('email-text');
+  if(et){et.textContent=et.getAttribute('data-user')+'@'+et.getAttribute('data-domain');}
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

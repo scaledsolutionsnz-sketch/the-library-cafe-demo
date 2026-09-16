@@ -1,0 +1,222 @@
+- generic
+  - generic "Google Maps"
+    - generic
+      - generic
+        - application "Map · Use arrow keys to pan the map. · Get details about a place by pressing its corresponding number key." [ref=e1] focusable [tabindex]
+          - Canvas
+          - Canvas
+      - generic
+        - search
+          - button "Back" [ref=e11]
+          - generic
+            - form
+              - combobox [expanded=false, ref=e18]: The Library Cafe
+                - StaticText "The Library Cafe"
+            - button "Search" [ref=e19]
+            - button "Close" [ref=e20]
+      - region "Available search options for this area" [ref=e23]
+        - generic
+          - button "Nearby restaurants" [ref=e29]
+            - generic
+              - StaticText "Nearby restaurants"
+          - button "Hotels" [ref=e30]
+            - generic
+              - StaticText "Hotels"
+          - button "Things to do" [ref=e31]
+            - generic
+              - StaticText "Things to do"
+          - button "Bars" [ref=e32]
+            - generic
+              - StaticText "Bars"
+          - button "Coffee" [ref=e33]
+            - generic
+              - StaticText "Coffee"
+          - button "Takeout" [ref=e34]
+            - generic
+              - StaticText "Takeout"
+          - button "Groceries" [ref=e35]
+            - generic
+              - StaticText "Groceries"
+        - button "Next page" [ref=e36]
+      - generic
+        - generic
+          - generic
+            - list
+              - listitem [level=1]
+                - button "Menu" [ref=e24]
+              - listitem [level=1]
+                - button "Saved" [ref=e25]
+                  - StaticText "Saved"
+              - listitem [level=1]
+                - button "Recents" [ref=e26]
+                  - StaticText "Recents"
+              - listitem [level=1]
+                - button "The Library Cafe" [ref=e27]
+                  - generic
+                  - StaticText "The Library Cafe"
+              - listitem [level=1]
+                - button "Get app" [ref=e28]
+                  - StaticText "Get app"
+          - main "The Library Cafe" [ref=e37]
+            - tablist
+              - tab "Overview of The Library Cafe" [ref=e39]
+                - generic
+              - tab "Reviews for The Library Cafe" [selected, ref=e40]
+                - generic
+              - tab "About The Library Cafe" [ref=e41]
+                - generic
+            - list
+              - listitem [level=1]
+                - StaticText "Get pickup or delivery"
+            - StaticText "See menus and fees"
+            - link "Order online" [ref=e38]
+              - generic
+                - StaticText "Order online"
+            - generic
+              - generic
+                - button "Information" [ref=e42]
+              - LayoutTable
+                - image "5 stars, 2 reviews"
+                  - StaticText "5"
+                - image "4 stars, 0 reviews"
+                  - StaticText "4"
+                - image "3 stars, 1 review"
+                  - StaticText "3"
+                - image "2 stars, 0 reviews"
+                  - StaticText "2"
+                - image "1 stars, 1 review"
+                  - StaticText "1"
+              - StaticText "3.5"
+              - image "3.5 stars"
+              - StaticText "4 reviews"
+              - button "Write a review" [ref=e43]
+                - StaticText "Write a review"
+              - generic
+                - generic
+                  - button "Search reviews" [ref=e55]
+              - button "Sort reviews" [ref=e44]
+                - StaticText "Sort"
+              - radiogroup "Refine reviews"
+                - radio "All reviews" [checked=true, ref=e45]
+                  - generic
+                    - StaticText "All"
+                - radio "pie, mentioned in 2 reviews" [checked=false, ref=e46]
+                  - generic
+                    - StaticText "pie"
+                    - StaticText "2"
+              - generic
+                - button "Photo of Rosa Dino" [ref=e56]
+                - generic
+                  - button "Rosa Dino Local Guide · 11 reviews · 4 photos" [ref=e57]
+                    - StaticText "Rosa Dino"
+                    - StaticText "Local Guide · 11 reviews · 4 photos"
+                  - button "Actions for Rosa Dino's review" [ref=e58]
+                - image "3 stars"
+                - StaticText "a week ago"
+                - StaticText "NEW"
+                - generic
+                  - StaticText "A bit of a mixed bag to be honest.\nRoast meals are good value but sometimes the vegetables have been poorly prepared and I've even found a potato that was hollow inside. They don't have pies on …"
+                  - button "See more" [expanded=false, ref=e59]
+                    - StaticText "More"
+                - button "Like" [ref=e47]
+                  - generic [ref=e60] clickable [cursor:pointer]
+                    - StaticText "Like"
+                - button "Share Rosa Dino's review." [ref=e48]
+                  - generic [ref=e61] clickable [cursor:pointer]
+                    - StaticText "Share"
+              - generic
+                - button "Photo of Rochelle Pratt" [ref=e62]
+                - generic
+                  - button "Rochelle Pratt 5 reviews" [ref=e63]
+                    - StaticText "Rochelle Pratt"
+                    - StaticText "5 reviews"
+                  - button "Actions for Rochelle Pratt's review" [ref=e64]
+                - image "1 star"
+                - StaticText "8 months ago"
+                - generic
+                  - StaticText "We visited the Cafe at the levin library and was very disappointed. It use to be lovely\nWe order a pie out of the pie warmer and when it arrived at the table it was …"
+                  - button "See more" [expanded=false, ref=e65]
+                    - StaticText "More"
+                - button "Like" [ref=e49]
+                  - generic [ref=e66] clickable [cursor:pointer]
+                    - StaticText "Like"
+                - button "Share Rochelle Pratt's review." [ref=e50]
+                  - generic [ref=e67] clickable [cursor:pointer]
+                    - StaticText "Share"
+              - generic
+                - button "Photo of Brenda SJ" [ref=e68]
+                - generic
+                  - button "Brenda SJ 3 reviews" [ref=e69]
+                    - StaticText "Brenda SJ"
+                    - StaticText "3 reviews"
+                  - button "Actions for Brenda SJ's review" [ref=e70]
+                - image "5 stars"
+                - StaticText "a year ago"
+                - StaticText "Consistently the best hot coffee in most of Levin."
+                - button "Like" [ref=e51]
+                  - generic [ref=e71] clickable [cursor:pointer]
+                    - StaticText "Like"
+                - button "Share Brenda SJ's review." [ref=e52]
+                  - generic [ref=e72] clickable [cursor:pointer]
+                    - StaticText "Share"
+              - generic
+                - button "Photo of myriam jellouli" [ref=e73]
+                - generic
+                  - button "myriam jellouli 1 review" [ref=e74]
+                    - StaticText "myriam jellouli"
+                    - StaticText "1 review"
+                  - button "Actions for myriam jellouli's review" [ref=e75]
+                - image "5 stars"
+                - StaticText "11 hours ago"
+                - StaticText "NEW"
+                - generic
+                  - StaticText "Delicious homemade goodies both savoury and sweet\nbest cappuccino out there and staff is lovely !\n100% recommend"
+                  - button "See more" [expanded=false, ref=e76]
+                    - StaticText "More"
+                - button "Like" [ref=e53]
+                  - generic [ref=e77] clickable [cursor:pointer]
+                    - StaticText "Like"
+                - button "Share myriam jellouli's review." [ref=e54]
+                  - generic [ref=e78] clickable [cursor:pointer]
+                    - StaticText "Share"
+        - button "Collapse side panel" [ref=e12]
+      - generic
+        - button "Google apps" [expanded=false, ref=e21]
+          - StaticText "  "
+        - link "Sign in" [ref=e3]
+          - StaticText "  "
+          - StaticText "Sign in"
+      - generic
+        - generic
+        - generic
+          - generic
+            - button "Show Your Location" [ref=e13]
+          - generic [ref=e4] clickable [cursor:pointer]
+            - generic
+              - button "Zoom in" [ref=e22]
+            - button "Zoom out" [ref=e14]
+        - generic
+          - generic [ref=e5] clickable [cursor:pointer]
+            - button "Browse Street View images" [ref=e15]
+          - button "Street View" [ref=e6]
+        - generic
+        - generic
+          - generic [ref=e16] clickable [cursor:pointer]
+            - LabelText
+              - StaticText "Layers"
+          - button "Layers" [expanded=false, ref=e17]
+        - generic
+          - generic
+            - image
+            - image
+            - image
+            - image
+      - contentinfo
+        - StaticText "Map data ©2026 Google"
+        - button "New Zealand" [ref=e7]
+        - button "Terms" [ref=e8]
+        - button "Privacy" [ref=e9]
+        - button "Send Product Feedback" [ref=e10]
+      - button "100 m" [ref=e2]
+        - LabelText
+          - StaticText "100 m"

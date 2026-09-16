@@ -1,0 +1,40 @@
+{
+  "name": "The Library Caf\u00e9",
+  "phone": "+64223253125",
+  "email": "thelibrarycafe2020@gmail.com",
+  "address": "10 Bath Street, Levin 5510",
+  "place_id": "ChIJ_R_BsefzQG0RmdmjbcI7Xoc",
+  "rating": "3.5",
+  "count": 4,
+  "social": [
+    "https://www.facebook.com/thelibrarycafelevin/"
+  ],
+  "read_reviews": "https://search.google.com/local/reviews?placeid=ChIJ_R_BsefzQG0RmdmjbcI7Xoc",
+  "write_review": "https://search.google.com/local/writereview?placeid=ChIJ_R_BsefzQG0RmdmjbcI7Xoc",
+  "reviews": [
+    [
+      "Rosa Dino",
+      3,
+      "a week ago",
+      "A bit of a mixed bag to be honest."
+    ],
+    [
+      "Rochelle Pratt",
+      1,
+      "8 months ago",
+      "was very disappointed."
+    ],
+    [
+      "Brenda SJ",
+      5,
+      "a year ago",
+      "Consistently the best hot coffee in most of Levin."
+    ],
+    [
+      "myriam jellouli",
+      5,
+      "11 hours ago",
+      "Delicious homemade goodies"
+    ]
+  ]
+}
