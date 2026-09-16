@@ -50,3 +50,13 @@ Live: https://the-library-cafe-demo.vercel.app
 GitHub: https://github.com/scaledsolutionsnz-sketch/the-library-cafe-demo
 
 Local folder: /Users/wiremubartlett/Desktop/builds/the-library-cafe-demo
+
+## Image shape correction
+
+- [x] Responsive image heights override fixed HTML pixel-height attributes.
+- [x] Service photographs share the same rendered dimensions at 375px, 768px and 1440px.
+- [x] All homepage images checked for stretched rendering; none detected.
+- [x] No horizontal overflow at those sizes.
+- [x] Source photos unchanged; cover cropping preserves image proportions.
+
+Evidence: `verification/image-shapes.json` and `verification/cards-*.png`.

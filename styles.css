@@ -1,3 +1,5 @@
+/* Let responsive CSS determine image height instead of HTML pixel dimensions. */
+img{height:auto}
 
 :root{
   --ink:#14261f;
@@ -209,3 +211,6 @@ html{scroll-padding-top:90px}body{font-size:16px}img{max-width:100%;border-radiu
 .verified-mobile-call{color:inherit}.hero .verified-rating{line-height:1.5} .verified-legal>.verified-section{padding-left:0;padding-right:0} .verified-legal .verified-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
 
 .verified-mobile-call{color:#fff;background:#202b26;border-radius:6px;white-space:nowrap}.verified-legal{animation:pageEnter .8s ease both}.verified-legal section{background:transparent;color:inherit}.verified-footer a{overflow-wrap:anywhere}.verified-map{padding-top:30px;padding-bottom:30px}#intro{animation:hideIntro 0s 1.4s forwards}@keyframes hideIntro{to{visibility:hidden;opacity:0}}
+
+/* Keep direct card photos from shrinking within equal-height grid cards. */
+.svc>img,.service-card>img{height:auto;flex-shrink:0}

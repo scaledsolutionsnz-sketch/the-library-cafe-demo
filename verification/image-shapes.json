@@ -1,0 +1,446 @@
+[
+  {
+    "width": 375,
+    "data": {
+      "images": [
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 760,
+          "naturalRatio": 1.3392857142857142,
+          "ratio": "auto 960 / 718",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 375
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 760,
+          "naturalRatio": 1.644736842105263,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-coffee.jpg",
+          "w": 375
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 760,
+          "naturalRatio": 1.644736842105263,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-food.jpg",
+          "w": 375
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-espresso.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cabinet.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-roast.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cake.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-drinks.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 249.75,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-catchup.jpg",
+          "w": 333
+        },
+        {
+          "distorted": false,
+          "fit": "contain",
+          "h": 80,
+          "naturalRatio": 1,
+          "ratio": "auto 720 / 720",
+          "service": false,
+          "src": "img/business-logo.jpg",
+          "w": 80
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 251.25,
+          "naturalRatio": 1.3392857142857142,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 335
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 251.25,
+          "naturalRatio": 1.3392857142857142,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 335
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 251.25,
+          "naturalRatio": 1,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-4.jpg",
+          "w": 335
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 251.25,
+          "naturalRatio": 1.334519572953737,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/card-espresso.jpg",
+          "w": 335
+        }
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 768,
+    "data": {
+      "images": [
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.3379790940766552,
+          "ratio": "auto 960 / 718",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 768
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.6375266524520256,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-coffee.jpg",
+          "w": 768
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.6375266524520256,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-food.jpg",
+          "w": 768
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-espresso.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cabinet.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-roast.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cake.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-drinks.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 261.75,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-catchup.jpg",
+          "w": 349
+        },
+        {
+          "distorted": false,
+          "fit": "contain",
+          "h": 80,
+          "naturalRatio": 1,
+          "ratio": "auto 720 / 720",
+          "service": false,
+          "src": "img/business-logo.jpg",
+          "w": 80
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 546,
+          "naturalRatio": 1.3379790940766552,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 728
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 168.984375,
+          "naturalRatio": 1.3379790940766552,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 225.328125
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 168.984375,
+          "naturalRatio": 1,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-4.jpg",
+          "w": 225.328125
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 168.984375,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/card-espresso.jpg",
+          "w": 225.328125
+        }
+      ],
+      "overflow": false
+    }
+  },
+  {
+    "width": 1440,
+    "data": {
+      "images": [
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.3370473537604457,
+          "ratio": "auto 960 / 718",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 1440
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.6363636363636365,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-coffee.jpg",
+          "w": 1440
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 1000,
+          "naturalRatio": 1.6363636363636365,
+          "ratio": "auto 1800 / 1100",
+          "service": false,
+          "src": "img/hero-food.jpg",
+          "w": 1440
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-espresso.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cabinet.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-roast.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-cake.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-drinks.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 265.5,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "auto 1200 / 900",
+          "service": true,
+          "src": "img/card-catchup.jpg",
+          "w": 354
+        },
+        {
+          "distorted": false,
+          "fit": "contain",
+          "h": 80,
+          "naturalRatio": 1,
+          "ratio": "auto 720 / 720",
+          "service": false,
+          "src": "img/business-logo.jpg",
+          "w": 80
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 397.5,
+          "naturalRatio": 1.338289962825279,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 530
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 268.984375,
+          "naturalRatio": 1.338289962825279,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-1.jpg",
+          "w": 358.65625
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 269,
+          "naturalRatio": 1,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/business-4.jpg",
+          "w": 358.671875
+        },
+        {
+          "distorted": false,
+          "fit": "cover",
+          "h": 268.984375,
+          "naturalRatio": 1.3333333333333333,
+          "ratio": "4 / 3",
+          "service": false,
+          "src": "img/card-espresso.jpg",
+          "w": 358.65625
+        }
+      ],
+      "overflow": false
+    }
+  }
+]
