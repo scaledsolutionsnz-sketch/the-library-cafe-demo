@@ -214,3 +214,17 @@ html{scroll-padding-top:90px}body{font-size:16px}img{max-width:100%;border-radiu
 
 /* Keep direct card photos from shrinking within equal-height grid cards. */
 .svc>img,.service-card>img{height:auto;flex-shrink:0}
+
+.verified-gallery .portrait img{aspect-ratio:3/4}
+.menu-grid{display:grid;gap:18px;margin-top:10px}
+.menu-card{background:#fff;border:1px solid #20262022;border-radius:10px;padding:8px 24px;color:#232323}
+.menu-card summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-family:Literata,Georgia,serif;font-size:1.5rem;font-weight:600}
+.menu-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 28px;padding:8px 0 20px}
+.menu-cols h3{font-size:1.05rem;margin:14px 0 6px}
+.menu-cols p,.menu-cols li{margin:0;line-height:1.6;font-size:15px}
+.menu-cols ul{list-style:none;margin:0;padding:0}
+.menu-cols li{display:flex;justify-content:space-between;gap:12px;padding:2px 0}
+.menu-cols b{white-space:nowrap}
+.menu-note{margin:6px 0 18px}
+@media(max-width:900px){.menu-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.menu-cols{grid-template-columns:1fr}.menu-card{padding:6px 16px}}
